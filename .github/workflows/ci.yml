@@ -45,8 +45,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/SimAbild/todo-app:latest
-            ghcr.io/SimAbild/todo-app:${{ github.sha }}
+            ghcr.io/simabild/todo-app:latest
+            ghcr.io/simabild/todo-app:${{ github.sha }}
 
   build-and-push-frontend:
     needs: build-and-test
@@ -71,8 +71,8 @@ jobs:
           context: ./frontend
           push: true
           tags: |
-            ghcr.io/SimAbild/todo-app-frontend:latest
-            ghcr.io/SimAbild/todo-app-frontend:${{ github.sha }}
+            ghcr.io/simabild/todo-app-frontend:latest
+            ghcr.io/simabild/todo-app-frontend:${{ github.sha }}
 
   deploy:
     needs: [build-and-push-image, build-and-push-frontend]
